@@ -1,0 +1,31 @@
+{
+  "name": "app",
+  "private": true,
+  "version": "0.0.0",
+  "description": "Gravility News app",
+  "keywords": [],
+  "dependencies": {
+    "del": "*",
+    "gulp": "*",
+    "gulp-concat": "*",
+    "gulp-connect": "*",
+    "gulp-less": "*",
+    "gulp-livereload": "^3.8.1",
+    "gulp-minify-css": "*",
+    "gulp-ng-annotate": "*",
+    "gulp-notify": "*",
+    "gulp-open": "*",
+    "gulp-rename": "*",
+    "gulp-uglify": "*",
+    "gulp-watch": "*",
+    "highcharts": "^5.0.6",
+    "path": "^0.12.7"
+  },
+  "author": "Delymar Rodriguez",
+  "license": "MIT License",
+  "devDependencies": {
+    "concurrent-transform": "1.0.0",
+    "gulp-awspublish": "3.0.1",
+    "gulp-livereload": "^3.8.1"
+  }
+}

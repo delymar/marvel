@@ -1,0 +1,124 @@
+{
+    "results": [
+      {
+        "id": 1011334,
+        "name": "3-D Man",
+        "description": "",
+        "modified": "2014-04-29T14:18:17-0400",
+        "thumbnail": {
+              "path": "http://i.annihil.us/u/prod/marvel/i/mg/c/e0/535fecbbb9784",
+              "extension": "jpg"
+            },
+        "resourceURI": "http://gateway.marvel.com/v1/public/characters/1011334",
+        "comics": {
+              "available": 11,
+              "collectionURI": "http://gateway.marvel.com/v1/public/characters/1011334/comics",
+              "items": [
+                {
+                  "resourceURI": "http://gateway.marvel.com/v1/public/comics/10223",
+                  "name": "Marvel Premiere (1972) #35"
+                },
+                {
+                  "resourceURI": "http://gateway.marvel.com/v1/public/comics/10224",
+                  "name": "Marvel Premiere (1972) #36"
+                },
+                {
+                  "resourceURI": "http://gateway.marvel.com/v1/public/comics/10225",
+                  "name": "Marvel Premiere (1972) #37"
+                }
+              ],
+              "returned": 11
+          }
+      },
+      {
+        "id": 1011337,
+        "name": "3-D Man",
+        "description": "",
+        "modified": "2014-04-29T14:18:17-0400",
+        "thumbnail": {
+              "path": "http://i.annihil.us/u/prod/marvel/i/mg/c/e0/535fecbbb9784",
+              "extension": "jpg"
+            },
+        "resourceURI": "http://gateway.marvel.com/v1/public/characters/1011334",
+        "comics": {
+              "available": 11,
+              "collectionURI": "http://gateway.marvel.com/v1/public/characters/1011334/comics",
+              "items": [
+                {
+                  "resourceURI": "http://gateway.marvel.com/v1/public/comics/10223",
+                  "name": "Marvel Premiere (1972) #35"
+                },
+                {
+                  "resourceURI": "http://gateway.marvel.com/v1/public/comics/10224",
+                  "name": "Marvel Premiere (1972) #36"
+                },
+                {
+                  "resourceURI": "http://gateway.marvel.com/v1/public/comics/10225",
+                  "name": "Marvel Premiere (1972) #37"
+                }
+              ],
+              "returned": 11
+          }
+      },
+      {
+        "id": 1011336,
+        "name": "3-D Man",
+        "description": "",
+        "modified": "2014-04-29T14:18:17-0400",
+        "thumbnail": {
+              "path": "http://i.annihil.us/u/prod/marvel/i/mg/c/e0/535fecbbb9784",
+              "extension": "jpg"
+            },
+        "resourceURI": "http://gateway.marvel.com/v1/public/characters/1011334",
+        "comics": {
+              "available": 11,
+              "collectionURI": "http://gateway.marvel.com/v1/public/characters/1011334/comics",
+              "items": [
+                {
+                  "resourceURI": "http://gateway.marvel.com/v1/public/comics/10223",
+                  "name": "Marvel Premiere (1972) #35"
+                },
+                {
+                  "resourceURI": "http://gateway.marvel.com/v1/public/comics/10224",
+                  "name": "Marvel Premiere (1972) #36"
+                },
+                {
+                  "resourceURI": "http://gateway.marvel.com/v1/public/comics/10225",
+                  "name": "Marvel Premiere (1972) #37"
+                }
+              ],
+              "returned": 11
+          }
+      },
+      {
+        "id": 1011335,
+        "name": "3-D Man",
+        "description": "",
+        "modified": "2014-04-29T14:18:17-0400",
+        "thumbnail": {
+              "path": "http://i.annihil.us/u/prod/marvel/i/mg/c/e0/535fecbbb9784",
+              "extension": "jpg"
+            },
+        "resourceURI": "http://gateway.marvel.com/v1/public/characters/1011334",
+        "comics": {
+              "available": 11,
+              "collectionURI": "http://gateway.marvel.com/v1/public/characters/1011334/comics",
+              "items": [
+                {
+                  "resourceURI": "http://gateway.marvel.com/v1/public/comics/10223",
+                  "name": "Marvel Premiere (1972) #35"
+                },
+                {
+                  "resourceURI": "http://gateway.marvel.com/v1/public/comics/10224",
+                  "name": "Marvel Premiere (1972) #36"
+                },
+                {
+                  "resourceURI": "http://gateway.marvel.com/v1/public/comics/10225",
+                  "name": "Marvel Premiere (1972) #37"
+                }
+              ],
+              "returned": 11
+          }
+      }
+    ]
+}

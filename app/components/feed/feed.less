@@ -1,0 +1,66 @@
+.feed{
+  position: relative;
+  .feed-title{
+    margin-bottom: 20px;
+    .characters-title{
+      font-size: 20px;
+      font-weight: bolder;
+    }
+    .sort-select{
+      border: 2px solid @colorBorderSort;
+      border-radius: 0px;
+    }
+  }
+  .character-feed{
+    padding-left: 20px;
+    margin-right: 20px;
+    .thumbnail{
+      border: none;
+      margin-top: 20px;
+      margin-bottom: 30px;
+      .img-character{
+        width: 80%;
+        margin-top: -20px;
+        margin-left: -15px;
+        border-radius: 50%;
+        margin-bottom: 15px;
+        float: left;
+      }
+      .info{
+        color: @colorRelatedComics;
+        margin-left: -45px;
+        .name-character{
+          margin: -20px;
+          font-size: 24px;
+          font-weight: bolder;
+          margin-bottom: 5px;
+          color: @colorName;
+        }
+        .view-more{
+          border-radius: 0px;
+          background-color: @buttonViewMore;
+          color: white;
+          border: none;
+        }
+      }
+    }
+    .caption{
+      color: @colorRelatedComics;
+      .related{
+        margin: 0px;
+        font-size: 18px;
+        font-weight: bolder;
+      }
+      .comics-random{
+        .item{
+          float: left;
+          margin: 5px;
+          font-size: 16px;
+          color: @colorRelatedComics;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+}

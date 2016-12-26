@@ -1,19 +1,25 @@
-(function(){
+
+(function() {
     'use strict';
-    angular.module('app')
-        .directive('comicsDetails',function(){
-            return {
-                templateUrl:'app/components/comicsDetails/comicsDetails.html',
-                restrict: 'E',
-                replace: true,
-                controller: comicsDetailsController
-            }
-        });
+    var app = angular.module('app')
+        .controller('comicsDetailsController', ['$scope', '$uibModalInstance',  'apiService', 'items',
+            function ($scope, $uibModalInstance, apiService, items) {
+                var vm = this;
 
-    comicsDetailsController.$inject = ['$state', '$scope', 'apiService', '$uibModal'];
-    function comicsDetailsController($state, $scope, apiService, $uibModal) {
+                apiService.getComics().then(
+                    function success (resp) {
+                        $scope.comic = resp;
+                    },
+                    function error (err) {
+                        console.log("err",err)
+                      }
+                  );
+                  $scope.actions = {
+                  CloseModal: function () {
+                      $uibModalInstance.close();
+                  }
+              };
 
-
-    }
-
+            }]
+        );
 })();

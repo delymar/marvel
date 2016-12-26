@@ -17,7 +17,7 @@
             apiService.getAll().then(
                 function success (resp) {
                     $scope.characters = resp;
-                    console.log("characters", vm.characters)
+                    console.log("characters", $scope.characters)
                 },
                 function error (err) {
                     console.log("err",err)
@@ -25,7 +25,8 @@
               );
 
               $scope.actions= {
-                OpenComicsDetailsModal: function (idComics) {
+                OpenComicsDetailsModal: function (nameComics) {
+                    console.log("estoy en comicsDetailsController", nameComics)
                     var modalInstance = $uibModal.open({
                         animation: true,
                         ariaLabelledBy: 'modal-title',
@@ -36,7 +37,7 @@
                         resolve: {
                             items: function(){
                                 var comicsInfo = {
-                                    idComics: idComics
+                                    nameComics: nameComics
                                 };
                                 return comicsInfo;
                             }

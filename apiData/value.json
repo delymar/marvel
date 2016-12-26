@@ -2,7 +2,7 @@
     "results": [
       {
         "id": 1011334,
-        "name": "3-D Man",
+        "name": "Spiderman",
         "description": "",
         "modified": "2014-04-29T14:18:17-0400",
         "thumbnail": {
@@ -120,5 +120,26 @@
               "returned": 11
           }
       }
-    ]
+    ],
+    "comic":
+      {
+        "id": 22506,
+        "digitalId": 10949,
+        "title": "Avengers: The Initiative (2007) #19",
+        "description": "Join 3-D MAN, CLOUD 9, KOMODO, HARDBALL, and heroes around America in the battle that will decide the fate of the planet and the future of the Initiative program. Will the Kill Krew Army win the day?\n",
+        "prices": [
+          {
+            "type": "printPrice",
+            "price": 2.99
+          },
+          {
+            "type": "digitalPurchasePrice",
+            "price": 1.99
+          }
+        ],
+        "thumbnail": {
+          "path": "http://i.annihil.us/u/prod/marvel/i/mg/a/60/4e94a888dd6b6",
+          "extension": "jpg"
+        }
+      }
 }

@@ -7,5 +7,7 @@
     /* @ngInject */
     function dashboardController($scope, $state, apiService) {
         var vm = this;
+
+      
     }
 })();

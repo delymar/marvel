@@ -16,8 +16,17 @@
 
             apiService.getAll().then(
                 function success (resp) {
-                    $scope.characters = resp;
-                    console.log("characters", $scope.characters)
+                  _.each(resp, function (character) {
+                    if(!_.isEmpty(character.comics.items)) {
+                      _.each(character.comics.items, function(comic) {
+                        var str = comic.resourceURI.split('/');
+                        comic.id = str[6];
+                        return comic;
+                      })
+                    }
+                    return character;
+                  });
+                   $scope.characters = resp;
                 },
                 function error (err) {
                     console.log("err",err)

@@ -13,7 +13,8 @@
 
         var apiService = {
             getAll: getAll,
-            getComics: getComics
+            getComics: getComics,
+            getCharacterDetails: getCharacterDetails,
         };
         return apiService;
 
@@ -27,19 +28,28 @@
                           deferred.reject(status);
                       });
                   return deferred.promise;
-              };
-              function getComics() {
-                        var deferred = $q.defer();
-                        $http.get('/apiData/value.json')
-                            .success(function(value, status, headers, config) {
-                                deferred.resolve(value.comic);
-                            })
-                            .error(function(status) {
-                                deferred.reject(status);
-                            });
-                        return deferred.promise;
-                    };
-
-
+        };
+        function getComics() {
+                  var deferred = $q.defer();
+                  $http.get('/apiData/value.json')
+                        .success(function(value, status, headers, config) {
+                            deferred.resolve(value.comic);
+                        })
+                        .error(function(status) {
+                            deferred.reject(status);
+                        });
+                  return deferred.promise;
+        };
+        function getCharacterDetails() {
+                  var deferred = $q.defer();
+                  $http.get('/apiData/value.json')
+                        .success(function(value, status, headers, config) {
+                            deferred.resolve(value.characterDetails);
+                        })
+                        .error(function(status) {
+                            deferred.reject(status);
+                        });
+                  return deferred.promise;
+        }
     }
 })();

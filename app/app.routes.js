@@ -17,6 +17,16 @@
                     }
                 }
             })
+            .state('character', {
+               url: '/character:id',
+               views: {
+                   "main": {
+                       controller: 'characterController',
+                       controllerAs: 'vm',
+                       templateUrl: 'app/dashboard/character/character.html'
+                   }
+               }
+           })
 
         $urlRouterProvider.otherwise('/');
     }

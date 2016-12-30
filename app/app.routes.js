@@ -18,7 +18,7 @@
                 }
             })
             .state('character', {
-               url: '/character:id',
+               url: '/character/:id',
                views: {
                    "main": {
                        controller: 'characterController',

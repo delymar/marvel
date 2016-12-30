@@ -11,9 +11,29 @@
             }
         });
 
-    favoriteController.$inject = ['$state', '$scope', 'apiService'];
-    function favoriteController($state, $scope, apiService) {
+    favoriteController.$inject = ['$state', '$scope', 'favoriteService'];
+    function favoriteController($state, $scope, favoriteService) {
         var vm = this;
+
+        init();
+
+        function init() {
+            favoriteService.list().then(function success(favoriteList) {
+                $scope.favoriteList = favoriteList;
+            });
+        }
+
+        $scope.addComic = function (comicId) {
+            favoriteService.add(comicId).then(function success(favoriteList){
+                $scope.favoriteList = favoriteList;
+            });
+        }
+
+        $scope.removeComic = function (comicId) {
+            favoriteService.remove(comicId).then(function success(favoriteList){
+                $scope.favoriteList = favoriteList;
+            });
+        }
 
     }
 

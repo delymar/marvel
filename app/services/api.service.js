@@ -7,49 +7,85 @@
     angular.module('app').
     factory('apiService', apiService);
 
-    apiService.$inject = ['$http', '$q'];
+    apiService.$inject = ['$http', '$q', 'API', 'APIKEY'];
 
-    function apiService($http, $q) {
+    function apiService($http, $q, API, APIKEY) {
 
         var apiService = {
-            getAll: getAll,
+            getCharacters: getCharacters,
+            getCharacterById: getCharacterById,
             getComics: getComics,
-            getCharacterDetails: getCharacterDetails,
+            getComicById: getComicById,
+            getResourceFromCharacter: getResourceFromCharacter
         };
         return apiService;
 
-        function getAll() {
-                  var deferred = $q.defer();
-                  $http.get('/apiData/value.json')
-                      .success(function(value, status, headers, config) {
-                          deferred.resolve(value.results);
-                      })
-                      .error(function(status) {
-                          deferred.reject(status);
-                      });
-                  return deferred.promise;
+        function getCharacters(page) {
+            var deferred = $q.defer();
+            var limit = '&limit=10';
+            page = page === undefined ? 0 : page * 10;
+            var offset = '&offset=' + page;
+            $http.get(API + '/v1/public/characters' + APIKEY + limit + offset)
+            .success(function(value, status, headers, config) {
+                deferred.resolve(value.data.results);
+            })
+            .error(function(status) {
+                deferred.reject(status);
+            });
+            return deferred.promise;
         };
-        function getComics() {
-                  var deferred = $q.defer();
-                  $http.get('/apiData/value.json')
-                        .success(function(value, status, headers, config) {
-                            deferred.resolve(value.comic);
-                        })
-                        .error(function(status) {
-                            deferred.reject(status);
-                        });
-                  return deferred.promise;
+
+        function getCharacterById(characterId) {
+            var deferred = $q.defer();
+            $http.get(API + '/v1/public/characters/' + characterId + APIKEY)
+            .success(function(value, status, headers, config) {
+                deferred.resolve(value.data.results);
+            })
+            .error(function(status) {
+                deferred.reject(status);
+            });
+            return deferred.promise;
         };
-        function getCharacterDetails() {
-                  var deferred = $q.defer();
-                  $http.get('/apiData/value.json')
-                        .success(function(value, status, headers, config) {
-                            deferred.resolve(value.characterDetails);
-                        })
-                        .error(function(status) {
-                            deferred.reject(status);
-                        });
-                  return deferred.promise;
-        }
+
+        function getResourceFromCharacter(characterId, resource) {
+            var deferred = $q.defer();
+            $http.get(API + '/v1/public/characters/' + characterId + '/' + resource +  APIKEY)
+            .success(function(value, status, headers, config) {
+                deferred.resolve(value.data.results);
+            })
+            .error(function(status) {
+                deferred.reject(status);
+            });
+            return deferred.promise;
+        };
+
+        function getComics(page) {
+            var deferred = $q.defer();
+            var limit = '&limit=10';
+            page = page === undefined ? 0 : page * 10;
+            var offset = '&offset=' + page;
+            $http.get(API + '/v1/public/comics' + APIKEY + limit + offset)
+            .success(function(value, status, headers, config) {
+                deferred.resolve(value.data.results);
+            })
+            .error(function(status) {
+                deferred.reject(status);
+            });
+            return deferred.promise;
+        };
+
+        function getComicById(comicId) {
+            var deferred = $q.defer();
+            $http.get(API + '/v1/public/comics/' + comicId + APIKEY)
+            .success(function(value, status, headers, config) {
+                deferred.resolve(value.data.results);
+            })
+            .error(function(status) {
+                deferred.reject(status);
+            });
+            return deferred.promise;
+        };
+
+
     }
 })();

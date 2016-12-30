@@ -7,22 +7,42 @@
     /* @ngInject */
     function characterController($scope, $state, apiService, $uibModal) {
         var vm = this;
+        init();
 
-        vm.characterId = $state.params.id;
-        console.log(vm.characterId);
+        function init () {
+          vm.characterId = $state.params.id;
+          getCharacterData(vm.characterId);
+          vm.comics = getCharacterResource(vm.characterId, 'comics');
+          vm.events = getCharacterResource(vm.characterId, 'events');
+          vm.series = getCharacterResource(vm.characterId, 'series');
+          vm.stories = getCharacterResource(vm.characterId, 'stories');
+        }
 
-        apiService.getCharacterDetails().then(
+        function getCharacterData (characterId) {
+          apiService.getCharacterById(characterId).then(
             function success (resp) {
-                $scope.CharacterDetails = resp;
-                console.log("aqui me muestra los detalles", $scope.CharacterDetails);
+                vm.characterDetails = resp[0];
             },
             function error (err) {
                 console.log("err",err)
               }
           );
+        }
 
-          $scope.actions= {
-            OpenComicsDetailsModal: function (comicsId) {
+        function getCharacterResource(characterId, resource) {
+          return apiService.getResourceFromCharacter(characterId, resource).then(
+            function success (resp) {
+                return resp;
+            },
+            function error (err) {
+                console.log("err",err)
+                return;
+              }
+          );
+        }
+
+          vm.actions= {
+            OpenComicsDetailsModal: function (comicId) {
                 var modalInstance = $uibModal.open({
                     animation: true,
                     ariaLabelledBy: 'modal-title',
@@ -31,11 +51,11 @@
                     controller: 'comicsDetailsController',
                     size: 'md',
                     resolve: {
-                        items: function(){
-                            var comicsInfo = {
-                                comicsId: comicsId
+                        comic: function(){
+                            var comic = {
+                                id: comicId
                             };
-                            return comicsInfo;
+                            return comic;
                         }
                     }
                 })

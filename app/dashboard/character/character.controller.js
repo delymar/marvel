@@ -29,7 +29,6 @@
                     })
                 }
                 vm.characterDetails = resp[0];
-                console.log("hola mundooo")
             },
             function error (err) {
                 console.log("err",err)

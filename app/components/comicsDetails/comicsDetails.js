@@ -2,8 +2,8 @@
 (function() {
     'use strict';
     var app = angular.module('app')
-        .controller('comicsDetailsController', ['$scope', '$uibModalInstance',  'apiService', 'favoriteService', 'comic',
-            function ($scope, $uibModalInstance, apiService, favoriteService, comic) {
+        .controller('comicsDetailsController', ['$scope', '$uibModalInstance',  'apiService', 'favoriteService', 'comic', '$rootScope',
+            function ($scope, $uibModalInstance, apiService, favoriteService, comic, $rootScope) {
                 var vm = this;
                 vm.isFavorite = isFavorite;
                 vm.changeFavorite = changeFavorite;
@@ -32,6 +32,7 @@
                       .then(function (storage) {
                         vm.isFav = true;
                         vm.isFavText = 'Added to favourites';
+                        $rootScope.$broadcast('favorite', true);
                       })
                       .catch(function (error) {
                         console.log(error);
@@ -42,6 +43,7 @@
                       .then(function (storage) {
                         vm.isFav = false;
                         vm.isFavText = 'Add to favourites';
+                        $rootScope.$broadcast('favorite', true);
                       })
                       .catch(function (error) {
                         console.log(error);

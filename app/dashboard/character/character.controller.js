@@ -21,7 +21,15 @@
         function getCharacterData (characterId) {
           apiService.getCharacterById(characterId).then(
             function success (resp) {
+                if(!_.isEmpty(resp[0].comics.items)) {
+                    _.each(resp[0].comics.items, function(comic) {
+                    var str = comic.resourceURI.split('/');
+                    comic.id = str[6];
+                    return comic;
+                    })
+                }
                 vm.characterDetails = resp[0];
+                console.log(  vm.characterDetails);
             },
             function error (err) {
                 console.log("err",err)

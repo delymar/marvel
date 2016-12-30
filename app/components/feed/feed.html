@@ -19,7 +19,7 @@
       <div class="thumbnail">
         <div class="row">
           <div class="col-xs-5">
-            <img src="http://i.annihil.us/u/prod/marvel/i/mg/c/e0/535fecbbb9784.jpg" alt="" class="img-character">
+            <img ng-src="{{character.thumbnail.path + '.' + character.thumbnail.extension}}" alt="" class="img-character">
           </div>
           <div class="col-xs-7 info">
             <h3 class="text-capitalize name-character">{{character.name}}</h3>
@@ -40,4 +40,26 @@
       </div>
     </div>
   </div>
+  <div class="row pagination-row">
+    <nav aria-label="Page navigation">
+      <ul class="pagination">
+        <li>
+          <a href="#" aria-label="Previous">
+            <span aria-hidden="true">&laquo;</span>
+          </a>
+        </li>
+        <li><a href="#">1</a></li>
+        <li><a href="#">2</a></li>
+        <li><a href="#">3</a></li>
+        <li><a href="#">4</a></li>
+        <li><a href="#">5</a></li>
+        <li>
+          <a href="#" aria-label="Next">
+            <span aria-hidden="true">&raquo;</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+
 </div>

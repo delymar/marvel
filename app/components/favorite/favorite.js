@@ -35,6 +35,15 @@
             });
         }
 
+        function loadFavorite($event, favorite){
+         favoriteService.list().then(function success(favoriteList) {
+             $scope.favoriteList = favoriteList;
+         });
+       }
+
+       $scope.$on('favorite', loadFavorite)
+
+
     }
 
 })();

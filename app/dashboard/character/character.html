@@ -11,7 +11,7 @@
       <a type="button" ng-href="{{vm.characterDetails.urls[2].url}}" class="btn btn-primary btn-group btn-md button-more comiclick-button">Comiclick</a>
     </div>
   </div>
-  <div class="row">
+  <div class="row item-comic">
       <div class="col-xs-12 tabs">
         <uib-tabset active="active">
             <uib-tab index="0" select="alertMe()">
@@ -21,7 +21,7 @@
                 <div class="row">
                   <button type="button" class="btn-group btn-md add-fav pull-right" ng-show="vm.characterDetails.series.items.lenght >0">Agregar 3 a favoritos</button>
                 </div>
-              <div class="row">
+              <div class="row ">
                 <div class="col-xs-4 items" ng-repeat="comic in vm.characterDetails.comics.items" >
                   <a class="item" ng-click="vm.actions.OpenComicsDetailsModal(comic.id)">{{comic.name}}</a>
                 </div>

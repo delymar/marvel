@@ -32,6 +32,7 @@
                       .then(function (storage) {
                         vm.isFav = true;
                         vm.isFavText = 'Added to favourites';
+                        $route.reload();
                       })
                       .catch(function (error) {
                         console.log(error);

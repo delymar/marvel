@@ -1,4 +1,4 @@
-(function() {
+(function () {
 
     angular.module('app')
         .run(runBlock);
@@ -7,12 +7,12 @@
 
     function runBlock($rootScope, $state) {
 
-        $rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams) {
+        $rootScope.$on('$stateChangeStart', function (event, toState, toParams, fromState, fromParams) {
             console.log('view change Start ')
             $rootScope.currentState = toState.name;
         });
 
-        $rootScope.$on('$viewContentLoaded', function (){
+        $rootScope.$on('$viewContentLoaded', function () {
         });
     }
 

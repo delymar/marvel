@@ -1,4 +1,4 @@
-(function() {
+(function () {
     'use strict';
     angular.module('app')
         .controller('dashboardController', dashboardController);
@@ -8,6 +8,6 @@
     function dashboardController($scope, $state, apiService) {
         var vm = this;
 
-      
+
     }
 })();

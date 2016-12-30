@@ -1,4 +1,4 @@
-(function() {
+(function () {
     angular.module('app')
         .constant(_, '_')
         .constant('API', 'https://gateway.marvel.com:443')

@@ -1,13 +1,13 @@
 <div class="favorite">
     <p class="text-capitalize  text-center favorite-title">
-      <img src="/assets/images/btn-favourites-primary.png" alt="" class="img-logo"> My Favourite
+        <img src="/assets/images/btn-favourites-primary.png" alt="" class="img-logo"> My Favourite
     </p>
 
     <div class="row items-favorite" ng-repeat="favorite in favoriteList">
-      <div class="col-xs-12 comics">
-          <img ng-src="{{favorite.images[0].path + '.' + favorite.images[0].extension}}" alt="" class="img-favorite">
-          <a ng-click="removeComic(favorite.id)"><img src="/assets/images/btn-delete.png" alt="" class="icon-delete"></a>
-      </div>
+        <div class="col-xs-12 comics">
+            <img ng-src="{{favorite.images[0].path + '.' + favorite.images[0].extension}}" alt="" class="img-favorite">
+            <a ng-click="removeComic(favorite.id)"><img src="/assets/images/btn-delete.png" alt="" class="icon-delete"></a>
+        </div>
     </div>
 
 </div>

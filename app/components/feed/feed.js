@@ -1,9 +1,9 @@
-(function(){
+(function () {
     'use strict';
     angular.module('app')
-        .directive('feed',function(){
+        .directive('feed', function () {
             return {
-                templateUrl:'app/components/feed/feed.html',
+                templateUrl: 'app/components/feed/feed.html',
                 restrict: 'E',
                 replace: true,
                 controller: feedController
@@ -12,10 +12,10 @@
 
     feedController.$inject = ['$state', '$scope', 'apiService', '$uibModal'];
     function feedController($state, $scope, apiService, $uibModal) {
-        
+
         $scope.totalCharacters = 1;
         $scope.currentPage = 1;
-       
+
         init()
 
         function init() {
@@ -23,31 +23,31 @@
         }
 
 
-        function getCharacters(n){
-            console.log("pagina:",n);
+        function getCharacters(n) {
+            console.log("pagina:", n);
             apiService.getCharacters(n).then(
-                function success (resp) {
+                function success(resp) {
                     _.each(resp.results, function (character) {
-                    if(!_.isEmpty(character.comics.items)) {
-                        _.each(character.comics.items, function(comic) {
-                        var str = comic.resourceURI.split('/');
-                        comic.id = str[6];
-                        return comic;
-                        })
-                    }
-                    return character;
+                        if (!_.isEmpty(character.comics.items)) {
+                            _.each(character.comics.items, function (comic) {
+                                var str = comic.resourceURI.split('/');
+                                comic.id = str[6];
+                                return comic;
+                            })
+                        }
+                        return character;
                     });
                     $scope.characters = resp.results;
                     $scope.totalCharacters = resp.total;
                 },
-                function error (err) {
-                    console.log("err",err)
-                    }
-                );
+                function error(err) {
+                    console.log("err", err)
+                }
+            );
 
         }
 
-        $scope.actions= {
+        $scope.actions = {
             OpenComicsDetailsModal: function (comicId) {
                 var modalInstance = $uibModal.open({
                     animation: true,
@@ -58,7 +58,7 @@
                     controllerAs: 'vm',
                     size: 'md',
                     resolve: {
-                        comic: function(){
+                        comic: function () {
                             var comic = {
                                 id: comicId
                             };

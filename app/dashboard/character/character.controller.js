@@ -1,4 +1,4 @@
-(function() {
+(function () {
     'use strict';
     angular.module('app')
         .controller('characterController', characterController);
@@ -9,46 +9,46 @@
         var vm = this;
         init();
 
-        function init () {
-          vm.characterId = $state.params.id;
-          getCharacterData(vm.characterId);
-          vm.comics = getCharacterResource(vm.characterId, 'comics');
-          vm.events = getCharacterResource(vm.characterId, 'events');
-          vm.series = getCharacterResource(vm.characterId, 'series');
-          vm.stories = getCharacterResource(vm.characterId, 'stories');
+        function init() {
+            vm.characterId = $state.params.id;
+            getCharacterData(vm.characterId);
+            vm.comics = getCharacterResource(vm.characterId, 'comics');
+            vm.events = getCharacterResource(vm.characterId, 'events');
+            vm.series = getCharacterResource(vm.characterId, 'series');
+            vm.stories = getCharacterResource(vm.characterId, 'stories');
         }
 
-        function getCharacterData (characterId) {
-          apiService.getCharacterById(characterId).then(
-            function success (resp) {
-                if(!_.isEmpty(resp[0].comics.items)) {
-                    _.each(resp[0].comics.items, function(comic) {
-                    var str = comic.resourceURI.split('/');
-                    comic.id = str[6];
-                    return comic;
-                    })
+        function getCharacterData(characterId) {
+            apiService.getCharacterById(characterId).then(
+                function success(resp) {
+                    if (!_.isEmpty(resp[0].comics.items)) {
+                        _.each(resp[0].comics.items, function (comic) {
+                            var str = comic.resourceURI.split('/');
+                            comic.id = str[6];
+                            return comic;
+                        })
+                    }
+                    vm.characterDetails = resp[0];
+                },
+                function error(err) {
+                    console.log("err", err)
                 }
-                vm.characterDetails = resp[0];
-            },
-            function error (err) {
-                console.log("err",err)
-              }
-          );
+            );
         }
 
         function getCharacterResource(characterId, resource) {
-          return apiService.getResourceFromCharacter(characterId, resource).then(
-            function success (resp) {
-                return resp;
-            },
-            function error (err) {
-                console.log("err",err)
-                return;
-              }
-          );
+            return apiService.getResourceFromCharacter(characterId, resource).then(
+                function success(resp) {
+                    return resp;
+                },
+                function error(err) {
+                    console.log("err", err)
+                    return;
+                }
+            );
         }
 
-          vm.actions= {
+        vm.actions = {
             OpenComicsDetailsModal: function (comicId) {
                 var modalInstance = $uibModal.open({
                     animation: true,
@@ -59,7 +59,7 @@
                     controllerAs: 'vm',
                     size: 'md',
                     resolve: {
-                        comic: function(){
+                        comic: function () {
                             var comic = {
                                 id: comicId
                             };
@@ -68,6 +68,6 @@
                     }
                 })
             },
-          };
+        };
     }
 })();

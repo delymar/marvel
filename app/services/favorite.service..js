@@ -25,7 +25,6 @@
 
         function add(comicId) {
             var deferred = $q.defer();
-
             apiService.getComicById(comicId)
                 .then(function success(value, status, headers, config){
                     var storage = new Array();

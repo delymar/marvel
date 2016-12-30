@@ -14,7 +14,9 @@
                   vm.isFavText = vm.isFavorite(comic.id) ? 'Added to favourites' : 'Add to favourites';
                   apiService.getComicById(comic.id).then(
                     function success (resp) {
+                      console.log("resp",resp);
                       vm.comic = resp[0];
+                      console.log("comic",vm.comic);
                     },
                     function error (err) {
                       console.log("err",err)

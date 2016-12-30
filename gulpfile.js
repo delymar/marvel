@@ -50,6 +50,7 @@ var BaseNpm = 'node_modules/';
 // Vendor Files
 var vendorScripts = [
   BaseVendors + 'jquery/dist/jquery.min.js',
+  BaseVendors + 'bootstrap/dist/js/bootstrap.min.js',
   BaseVendors + 'lodash/lodash.min.js',
   BaseVendors + 'angular/angular.min.js',
   BaseVendors + 'angular-sanitize/angular-sanitize.min.js',
@@ -57,7 +58,6 @@ var vendorScripts = [
   BaseVendors + 'angular-ui-select/dist/select.min.js',
   BaseVendors + 'angular-bootstrap/ui-bootstrap-tpls.min.js',
   BaseVendors + 'angular-ui-router/release/angular-ui-router.min.js',
-  BaseVendors + 'bootstrap/dist/js/bootstrap.min.js',
   BaseVendors + 'angular-breadcrumb/dist/angular-breadcrumb.min.js',
   BaseVendors + 'angular-toastr/dist/angular-toastr.min.js',
   BaseVendors + 'angular-animate/angular-animate.js',
@@ -68,8 +68,8 @@ var vendorScripts = [
   BaseVendors + 'highcharts/highcharts.js'
 ];
 var vendorStyles = [
-  BaseVendors + 'angular-bootstrap/ui-bootstrap-csp.css',
   BaseVendors + 'bootstrap/dist/css/bootstrap.min.css',
+  BaseVendors + 'angular-bootstrap/ui-bootstrap-csp.css',
   BaseVendors + 'font-awesome/css/font-awesome.min.css',
   BaseVendors + 'angular-toastr/dist/angular-toastr.min.css'
 ];

@@ -57,6 +57,7 @@
                     ariaDescribedBy: 'modal-body',
                     templateUrl: 'app/components/comicsDetails/comicsDetails.html',
                     controller: 'comicsDetailsController',
+                    controllerAs: 'vm',
                     size: 'md',
                     resolve: {
                         comic: function(){

@@ -12,6 +12,10 @@
 
     feedController.$inject = ['$state', '$scope', 'apiService', '$uibModal'];
     function feedController($state, $scope, apiService, $uibModal) {
+        
+        $scope.totalCharacters = 1;
+        $scope.currentPage = 1;
+       
         init()
 
         function init() {
@@ -20,9 +24,10 @@
 
 
         function getCharacters(n){
+            console.log("pagina:",n);
             apiService.getCharacters(n).then(
                 function success (resp) {
-                    _.each(resp, function (character) {
+                    _.each(resp.results, function (character) {
                     if(!_.isEmpty(character.comics.items)) {
                         _.each(character.comics.items, function(comic) {
                         var str = comic.resourceURI.split('/');
@@ -32,7 +37,8 @@
                     }
                     return character;
                     });
-                    $scope.characters = resp;
+                    $scope.characters = resp.results;
+                    $scope.totalCharacters = resp.total;
                 },
                 function error (err) {
                     console.log("err",err)
@@ -61,6 +67,11 @@
                     }
                 })
             },
+        };
+
+        $scope.setPage = function (pageNo) {
+            $scope.currentPage = pageNo;
+            getCharacters(pageNo);
         };
     }
 

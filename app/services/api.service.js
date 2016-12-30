@@ -27,7 +27,7 @@
             var offset = '&offset=' + page;
             $http.get(API + '/v1/public/characters' + APIKEY + limit + offset)
             .success(function(value, status, headers, config) {
-                deferred.resolve(value.data.results);
+                deferred.resolve(value.data);
             })
             .error(function(status) {
                 deferred.reject(status);
